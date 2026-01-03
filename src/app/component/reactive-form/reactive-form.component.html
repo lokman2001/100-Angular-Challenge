@@ -1,0 +1,28 @@
+<div>
+    <form action="" [formGroup]="form" class="form-container">
+        <div class="email">
+            <input type="text" formControlName="email" placeholder="Your Email">
+            <span><fa-icon [icon]="emailIcon"></fa-icon></span>
+            <small *ngIf="form.controls['email'].touched && form.controls['email'].errors">
+                Email field is required
+            </small>
+
+        </div>
+        <div class="name">
+            <input type="text" formControlName="name" placeholder="Your Name">
+            <span><fa-icon [icon]="nameIcon"></fa-icon></span>
+            <small *ngIf="form.controls['name'].touched && form.controls['name'].errors">
+                Name field is required
+            </small>
+
+        </div>
+        <div class="message">
+            <textarea type="text" formControlName="message" placeholder="Tyype your message here"> </textarea>
+            <span><fa-icon [icon]=" messageIcon"></fa-icon></span>
+
+        </div>
+        <div class="submit">
+            <button type="submit"><fa-icon [icon]="sendIcon"></fa-icon> Send</button>
+        </div>
+    </form>
+</div>

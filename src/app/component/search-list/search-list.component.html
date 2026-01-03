@@ -1,14 +1,8 @@
 <div class="search-list">
-  <app-debounce-search
-    placeHolder="Search"
-    (searchUpdate)="getSearchKey($event)"
-    [searchTerm]="searchTerm"
-  ></app-debounce-search>
-  <ul class="list-wrapper" [class.is-selected]="selected">
-    <li
-      *ngFor="let item of items | filterTerm : searchKey"
-      (click)="select(item)"
-    >
+  <app-debounce-search placeHolder="Search" (searchUpdate)="getSearchKey($event)"
+    [searchTerm]="searchTerm"></app-debounce-search>
+  <ul class="list-wrapper" [class.is-selected]="selected" *ngIf="searchKey !== ''">
+    <li *ngFor="let item of items | filterTerm : searchKey" (click)="select(item)">
       {{ item }}
     </li>
   </ul>

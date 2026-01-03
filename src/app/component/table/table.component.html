@@ -1,0 +1,14 @@
+<table *ngIf="data.length !== 0  ">
+    <thead>
+        <tr>
+            <th *ngFor="let header of data[0] | keyvalue" (click)="headerSelection(header.key ,header.value)">
+                {{ header.key }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let raw of data">
+            <td *ngFor="let row of raw | keyvalue">{{ row.value }}</td>
+        </tr>
+    </tbody>
+</table>

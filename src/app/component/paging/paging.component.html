@@ -1,0 +1,6 @@
+<ul>
+    <li><button (click)="gotoPrev()" [disabled]="dialblePrev"><fa-icon [icon]="prev"></fa-icon></button></li>
+    <li *ngFor="let page of pages()"><button [class.is-active]='isCurrentPage(page)' (click)="goto(page)">{{ page
+            }}</button></li>
+    <li><button (click)="gotoNext()" [disabled]="dialbleNext"><fa-icon [icon]="next"></fa-icon></button></li>
+</ul>

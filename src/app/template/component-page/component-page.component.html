@@ -41,16 +41,60 @@
 </app-card>
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Debounce Search" subtitle="Component">
     <div body>
-        <app-debounce-search [searchKeyDisplay]="searchKeyDisplay" placeHolder="Search" (searchUpdate)="debounceSearch($event)" [updateSearchValue]="updateSearchValue"></app-debounce-search>
+        <app-debounce-search [searchKeyDisplay]="searchKeyDisplay" placeHolder="Search"
+            (searchUpdate)="debounceSearch($event)" [updateSearchValue]="updateSearchValue"></app-debounce-search>
     </div>
 </app-card>
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Search List" subtitle="Component">
     <div body>
-        <app-search-list [items]="countries" ></app-search-list>
+        <app-search-list [items]="countries"></app-search-list>
     </div>
 </app-card>
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Search List" subtitle="Component">
     <div body>
         <app-counter></app-counter>
+    </div>
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
+    <div body>
+        <app-table [data]="data"></app-table>
+    </div>
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
+    <div body>
+        <app-paging [currentPage]="currentPagingPage" [totalItems]="totalItems"
+            (changePageEvent)="changePagingPage($event)"></app-paging>
+    </div>
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
+    <div body>
+        <app-tab [tabs]="tabs" (changeTab)="changeTab($event)"></app-tab>
+        <app-paging [currentPage]="currentPagingPage" [totalItems]="totalItems"
+            (changePageEvent)="changePagingPage($event)" *ngIf="currentTab === 0"></app-paging>
+        <app-counter *ngIf="currentTab === 1"></app-counter>
+    </div>
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table Sort" subtitle="Component">
+    <div body>
+        <app-sort-table></app-sort-table>
+    </div>
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table Sort" subtitle="Component">
+    <div body>
+        <app-reactive-form>
+        </app-reactive-form>
+    </div>
+</app-card>
+
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table Sort" subtitle="Component">
+    <div body>
+        <app-ribbon content="Beta Course" [location]="ribbonStyle.location" [type]="ribbonStyle.type"></app-ribbon>
+        <button class="btn" (click)="ribbonStyle.location = rLocation.topRight">top right</button>
+        <button class="btn" (click)="ribbonStyle.location = rLocation.topLeft">top left</button>
+        <button class="btn" (click)="ribbonStyle.location = rLocation.bottomLeft">bottom left</button>
+        <button class="btn" (click)="ribbonStyle.location = rLocation.bottomRight">botton right</button>
+        <button class="btn" (click)="ribbonStyle.type = rType.info">info</button>
+        <button class="btn" (click)="ribbonStyle.type = rType.warning">warning</button>
+        <button class="btn" (click)="ribbonStyle.type = rType.error">error</button>
     </div>
 </app-card>

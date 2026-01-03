@@ -24,10 +24,16 @@ import { FlattenPipe } from './pipes/flatten.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { ToggleComponent } from './component/toggle/toggle.component';
 import { DebounceSearchComponent } from './component/debounce-search/debounce-search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchListComponent } from './component/search-list/search-list.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { RippleDirective } from './directive/ripple.directive';
+import { TableComponent } from './component/table/table.component';
+import { PagingComponent } from './component/paging/paging.component';
+import { TabComponent } from './component/tab/tab.component';
+import { SortTableComponent } from './component/sort-table/sort-table.component';
+import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
+import { RibbonComponent } from './component/ribbon/ribbon.component';
 
 @NgModule({
   declarations: [
@@ -54,15 +60,22 @@ import { RippleDirective } from './directive/ripple.directive';
     DebounceSearchComponent,
     SearchListComponent,
     CounterComponent,
-    RippleDirective
+    RippleDirective,
+    TableComponent,
+    PagingComponent,
+    TabComponent,
+    SortTableComponent,
+    ReactiveFormComponent,
+    RibbonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

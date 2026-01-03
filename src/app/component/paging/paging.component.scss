@@ -1,0 +1,21 @@
+@import "../../../style/color.scss";
+ul {
+  display: flex;
+  li {
+    padding: 4px;
+    list-style: none;
+    button {
+      text-align: center;
+      border-radius: 50%;
+      background: $white;
+      color: $black;
+      border: 1px solid $silver;
+      width: 30px;
+      aspect-ratio: 1/1;
+      &.is-active {
+        background: $lightblue;
+        color: $white;
+      }
+    }
+  }
+}

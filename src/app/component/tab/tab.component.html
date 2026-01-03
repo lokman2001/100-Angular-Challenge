@@ -1,0 +1,7 @@
+<div class="tabs">
+    <div class="tab" *ngFor="let tab of tabs; let i = index">
+        <div [class.is-active]="tab.active" (click)="chageTabClick(tab)">{{ tab.title }}</div>
+    </div>
+</div>
+
+<ng-content></ng-content>
