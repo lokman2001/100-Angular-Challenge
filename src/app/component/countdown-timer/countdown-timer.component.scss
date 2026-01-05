@@ -1,0 +1,18 @@
+@import "../../../style/color.scss";
+@import "../../../style/mixin.scss";
+.countdown-container {
+  display: flex;
+  justify-self: center;
+  background: $lightblue;
+
+  .countdown-item {
+    @include box-shadow;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background: $white;
+    text-align: center;
+  }
+}

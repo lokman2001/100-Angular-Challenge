@@ -1,0 +1,41 @@
+@import "../../../style/color.scss";
+.social-media-bar-container{
+    position: fixed;
+    bottom: 80px;
+    right: -40px;
+    transition: right 0.5s ease-in-out;
+    ul{
+        list-style: none;
+        li{
+            opacity: 0.9s;
+            font-size: larger;
+            width: 50px;
+            aspect-ratio: 1/1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.facebook{
+                background: #3b5998;
+            }
+            &.twitter{
+                background: #00acee;
+            }
+            &.instagram{
+                background: #C13584;
+            }
+            &.linkedin{
+                background: #0e76a8;
+            }
+            &:hover{
+                background: $black;
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+    &:hover{
+        right: 0;
+        transition: right 0.5s ease-in-out;
+    }   
+}

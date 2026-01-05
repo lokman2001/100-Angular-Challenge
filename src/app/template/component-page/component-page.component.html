@@ -1,118 +1,331 @@
-<app-banner-cutout title="100 Days of Angular"
-    imgURL="https://www.innerspace.org.uk/wp-content/uploads/bb-plugin/cache/A-calm-mind-a-Serene-mind-p7-panorama-38a402f47251310159ac37b007073324-5fd0b0d010f49.png"></app-banner-cutout>
+<app-banner-cutout
+  title="100 Days of Angular"
+  imgURL="https://www.innerspace.org.uk/wp-content/uploads/bb-plugin/cache/A-calm-mind-a-Serene-mind-p7-panorama-38a402f47251310159ac37b007073324-5fd0b0d010f49.png"
+></app-banner-cutout>
 
 <h2>Component Page</h2>
-<hr>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Card" subtitle="Component">
-    <p footer>Card Footer</p>
-    <p body>Card Body</p>
+<hr />
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Card"
+  subtitle="Component"
+>
+  <p footer>Card Footer</p>
+  <p body>Card Body</p>
 </app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Accordion" subtitle="Component">
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Accordion"
+  subtitle="Component"
+>
+  <app-accordion body [items]="items"></app-accordion>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Progress Bar"
+  subtitle="Component"
+>
+  <app-progress-bar body [value]="40" [maxValue]="100"></app-progress-bar>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Rating"
+  subtitle="Component"
+>
+  <app-rating body [rating]="1.5"></app-rating>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Accordion"
+  subtitle="Component"
+>
+  <app-quote
+    body
+    quote="Art is never finished, only abandoned"
+    author="leonardo da vinci"
+    occupation="painter, sculptor, architect, musician, engineer, inventor, anatomist, cartographer, and scientist"
+  ></app-quote>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button"
+  subtitle="Component"
+>
+  <div body>
+    <app-button color="silver" text="button 1" [icon]="faInfo"></app-button>
+    <app-button color="teal" text="button 2" [icon]="faInfo"></app-button>
+    <app-button color="red" text="button 3" [icon]="faInfo"></app-button>
+    <app-button color="rosyred" text="button 2" [icon]="faInfo"></app-button>
+    <app-button color="light-blue" text="button 2" [icon]="faInfo"></app-button>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-toggle></app-toggle>
+    <app-toggle></app-toggle>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Debounce Search"
+  subtitle="Component"
+>
+  <div body>
+    <app-debounce-search
+      [searchKeyDisplay]="searchKeyDisplay"
+      placeHolder="Search"
+      (searchUpdate)="debounceSearch($event)"
+      [updateSearchValue]="updateSearchValue"
+    ></app-debounce-search>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Search List"
+  subtitle="Component"
+>
+  <div body>
+    <app-search-list [items]="countries"></app-search-list>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Search List"
+  subtitle="Component"
+>
+  <div body>
+    <app-counter></app-counter>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Table"
+  subtitle="Component"
+>
+  <div body>
+    <app-table [data]="data"></app-table>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Table"
+  subtitle="Component"
+>
+  <div body>
+    <app-paging
+      [currentPage]="currentPagingPage"
+      [totalItems]="totalItems"
+      (changePageEvent)="changePagingPage($event)"
+    ></app-paging>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Table"
+  subtitle="Component"
+>
+  <div body>
+    <app-tab [tabs]="tabs" (changeTab)="changeTab($event)"></app-tab>
+    <app-paging
+      [currentPage]="currentPagingPage"
+      [totalItems]="totalItems"
+      (changePageEvent)="changePagingPage($event)"
+      *ngIf="currentTab === 0"
+    ></app-paging>
+    <app-counter *ngIf="currentTab === 1"></app-counter>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Table Sort"
+  subtitle="Component"
+>
+  <div body>
+    <app-sort-table></app-sort-table>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Email Form"
+  subtitle="Component"
+>
+  <div body>
+    <app-reactive-form> </app-reactive-form>
+  </div>
+</app-card>
 
-    <app-accordion body [items]="items"></app-accordion>
-
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Progress Bar" subtitle="Component">
-
-    <app-progress-bar body [value]="40" [maxValue]="100"></app-progress-bar>
-
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Rating" subtitle="Component">
-
-    <app-rating body [rating]="1.5"></app-rating>
-
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Accordion" subtitle="Component">
-
-    <app-quote body quote="Art is never finished, only abandoned" author="leonardo da vinci"
-        occupation="painter, sculptor, architect, musician, engineer, inventor, anatomist, cartographer, and scientist"></app-quote>
-
-
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Button" subtitle="Component">
-    <div body>
-        <app-button color="silver" text="button 1" [icon]="faInfo"></app-button>
-        <app-button color="teal" text="button 2" [icon]="faInfo"></app-button>
-        <app-button color="red" text="button 3" [icon]="faInfo"></app-button>
-        <app-button color="rosyred" text="button 2" [icon]="faInfo"></app-button>
-        <app-button color="light-blue" text="button 2" [icon]="faInfo"></app-button>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Toggle" subtitle="Component">
-    <div body>
-        <app-toggle></app-toggle>
-        <app-toggle></app-toggle>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Debounce Search" subtitle="Component">
-    <div body>
-        <app-debounce-search [searchKeyDisplay]="searchKeyDisplay" placeHolder="Search"
-            (searchUpdate)="debounceSearch($event)" [updateSearchValue]="updateSearchValue"></app-debounce-search>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Search List" subtitle="Component">
-    <div body>
-        <app-search-list [items]="countries"></app-search-list>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Search List" subtitle="Component">
-    <div body>
-        <app-counter></app-counter>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
-    <div body>
-        <app-table [data]="data"></app-table>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
-    <div body>
-        <app-paging [currentPage]="currentPagingPage" [totalItems]="totalItems"
-            (changePageEvent)="changePagingPage($event)"></app-paging>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table" subtitle="Component">
-    <div body>
-        <app-tab [tabs]="tabs" (changeTab)="changeTab($event)"></app-tab>
-        <app-paging [currentPage]="currentPagingPage" [totalItems]="totalItems"
-            (changePageEvent)="changePagingPage($event)" *ngIf="currentTab === 0"></app-paging>
-        <app-counter *ngIf="currentTab === 1"></app-counter>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Table Sort" subtitle="Component">
-    <div body>
-        <app-sort-table></app-sort-table>
-    </div>
-</app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Email Form" subtitle="Component">
-    <div body>
-        <app-reactive-form>
-        </app-reactive-form>
-    </div>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Ribbon"
+  subtitle="Component"
+>
+  <div body>
+    <app-ribbon
+      content="Beta Course"
+      [location]="ribbonStyle.location"
+      [type]="ribbonStyle.type"
+    ></app-ribbon>
+    <button class="btn" (click)="ribbonStyle.location = rLocation.topRight">
+      top right
+    </button>
+    <button class="btn" (click)="ribbonStyle.location = rLocation.topLeft">
+      top left
+    </button>
+    <button class="btn" (click)="ribbonStyle.location = rLocation.bottomLeft">
+      bottom left
+    </button>
+    <button class="btn" (click)="ribbonStyle.location = rLocation.bottomRight">
+      botton right
+    </button>
+    <button class="btn" (click)="ribbonStyle.type = rType.info">info</button>
+    <button class="btn" (click)="ribbonStyle.type = rType.warning">
+      warning
+    </button>
+    <button class="btn" (click)="ribbonStyle.type = rType.error">error</button>
+  </div>
 </app-card>
 
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Ribbon" subtitle="Component">
-    <div body>
-        <app-ribbon content="Beta Course" [location]="ribbonStyle.location" [type]="ribbonStyle.type"></app-ribbon>
-        <button class="btn" (click)="ribbonStyle.location = rLocation.topRight">top right</button>
-        <button class="btn" (click)="ribbonStyle.location = rLocation.topLeft">top left</button>
-        <button class="btn" (click)="ribbonStyle.location = rLocation.bottomLeft">bottom left</button>
-        <button class="btn" (click)="ribbonStyle.location = rLocation.bottomRight">botton right</button>
-        <button class="btn" (click)="ribbonStyle.type = rType.info">info</button>
-        <button class="btn" (click)="ribbonStyle.type = rType.warning">warning</button>
-        <button class="btn" (click)="ribbonStyle.type = rType.error">error</button>
-    </div>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-button-toggle
+      [option]="buttonOptions"
+      (selection)="onButtonToggleSelection($event)"
+    ></app-button-toggle>
+  </div>
 </app-card>
 
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Button Toggle" subtitle="Component">
-    <div body>
-        <app-button-toggle [option]="buttonOptions" (selection)="onButtonToggleSelection($event)"></app-button-toggle>
-    </div>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-snackbar message="this is Snackbar" #snackbar></app-snackbar>
+    <button class="btn" (click)="showSnackbar()">Show Snackbar</button>
+  </div>
 </app-card>
 
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Button Toggle" subtitle="Component">
-    <div body>
-        <app-snackbar message="this is Snackbar" #snackbar></app-snackbar>
-        <button class="btn" (click)="showSnackbar()">Show Snackbar</button>
-    </div>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <input type="number" name="" id="" [(ngModel)]="countdownDays" />
+    <app-countdown-timer [countdown]="countdownDays"></app-countdown-timer>
+  </div>
 </app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-popup message="Popup"><h2>Simple Popup</h2></app-popup>
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-footer></app-footer>
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-skeleton-loader *ngIf="!isloaded"></app-skeleton-loader>
+    <p *ngIf="isloaded">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+      reprehenderit expedita nam natus, cumque, molestias eius maiores
+      asperiores animi voluptatibus fugit non illum atque illo quaerat. Ipsa
+      blanditiis itaque nobis?
+    </p>
+    <button class="btn" (click)="isloaded = !isloaded">toggle</button>
+  </div>
+</app-card>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-botton-sheet #bottomSheet
+      ><button class="btn" (click)="openBottomSheet()">
+        toggle
+      </button></app-botton-sheet
+    >
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-fieldset-toggle title="Fieldset toggle" [isOpen]="false">
+      <app-reactive-form></app-reactive-form>
+    </app-fieldset-toggle>
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-pill title="Info Pill" [type]="pillType.info" [icon]="tagIcon"></app-pill>
+    <app-pill title="Success Pill" [type]="pillType.success" [icon]="tagIcon"></app-pill>
+    <app-pill title="Warning Pill" [type]="pillType.warning" [icon]="tagIcon"></app-pill>
+    <app-pill
+      title="Danger Pill"
+      [type]="pillType.error"
+      [icon]="tagIcon"
+    ></app-pill>
+  </div>
+</app-card>
+
+<app-social-media-bar></app-social-media-bar>

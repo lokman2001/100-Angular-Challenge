@@ -1,6 +1,6 @@
 import { SnackbarComponent } from './../../component/snackbar/snackbar.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faTag } from '@fortawesome/free-solid-svg-icons';
 import { RibbonLocation } from 'src/app/component/ribbon/ribbon.location.enum';
 import { RibbonType } from 'src/app/component/ribbon/ribbon.type';
 import { Accordion } from 'src/app/interface/accordion';
@@ -9,6 +9,8 @@ import { UserData } from 'src/app/interface/user-data';
 import { ButtonMeta } from 'src/app/model/button-meta.model';
 import { TabsService } from 'src/app/service/tabs.service';
 import { UserDataService } from 'src/app/service/user-data.service';
+import { BottonSheetComponent } from 'src/app/component/botton-sheet/botton-sheet.component';
+import { PillType } from 'src/app/component/pill/pill-type.enum';
 
 @Component({
   selector: 'app-component-page',
@@ -25,11 +27,18 @@ export class ComponentPageComponent {
   public currentPagingPage = 1;
   public tabs!: Tab[];
   public currentTab = 0;
+  public isloaded = false;
+  public tagIcon = faTag;
+  public pillType = PillType
   @ViewChild('snackbar') public snackbar!: SnackbarComponent;
   public showSnackbar() {
     this.snackbar.show();
   }
 
+  @ViewChild('bottomSheet') public bottomSheet!: BottonSheetComponent;
+  public openBottomSheet() {
+    this.bottomSheet?.show();
+  }
   public buttonOptions: ButtonMeta[] = [
     { id: 'btn1', title: 'Option 1', isActive: true },
     { id: 'btn2', title: 'Option 2', isActive: false },
@@ -86,9 +95,11 @@ export class ComponentPageComponent {
     type: this.rType.warning,
     location: this.rLocation.bottomLeft,
   };
+  public countdownDays! : number;
+
   constructor(
     private userDataService: UserDataService,
-    private tabsService: TabsService
+    private tabsService: TabsService,
   ) {}
 
   ngOnInit(): void {

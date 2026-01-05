@@ -37,6 +37,15 @@ import { RibbonComponent } from './component/ribbon/ribbon.component';
 import { ButtonToggleComponent } from './component/button-toggle/button-toggle.component';
 import { BannerCutoutComponent } from './component/banner-cutout/banner-cutout.component';
 import { SnackbarComponent } from './component/snackbar/snackbar.component';
+import { CountdownTimerComponent } from './component/countdown-timer/countdown-timer.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PopupComponent } from './component/popup/popup.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { SkeletonLoaderComponent } from './component/skeleton-loader/skeleton-loader.component';
+import { SocialMediaBarComponent } from './component/social-media-bar/social-media-bar.component';
+import { BottonSheetComponent } from './component/botton-sheet/botton-sheet.component';
+import { FieldsetToggleComponent } from './component/fieldset-toggle/fieldset-toggle.component';
+import { PillComponent } from './component/pill/pill.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +82,14 @@ import { SnackbarComponent } from './component/snackbar/snackbar.component';
     ButtonToggleComponent,
     BannerCutoutComponent,
     SnackbarComponent,
+    CountdownTimerComponent,
+    PopupComponent,
+    FooterComponent,
+    SkeletonLoaderComponent,
+    SocialMediaBarComponent,
+    BottonSheetComponent,
+    FieldsetToggleComponent,
+    PillComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +97,7 @@ import { SnackbarComponent } from './component/snackbar/snackbar.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

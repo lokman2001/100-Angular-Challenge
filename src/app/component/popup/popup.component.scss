@@ -1,0 +1,34 @@
+@import "../../../style/color.scss";
+
+.popup-container {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;    
+
+    span{
+        background: $black;
+        color: $white;
+        padding: 5px 10px;
+        border-radius: 2px;
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 1;
+
+       &::after{
+        content: '';
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $black transparent transparent transparent;
+    }
+    }
+     
+
+}

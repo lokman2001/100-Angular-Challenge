@@ -1,0 +1,45 @@
+@import "../../../style/color.scss";
+.bottom-sheet-content {
+    width: 80%;
+  border-radius: 4px 4px 0 0;
+  background: $white;
+  position: fixed;
+  bottom: 0;
+  left: 50% ;
+    transform: translateX(-50%);
+  z-index: 11;
+  padding: 16px;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  &.close {
+    visibility: hidden;
+    bottom: -300px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  button {
+    padding: 8px 16px;
+    float: right;
+  }
+  p {
+    display: block;
+    
+  }
+  
+}
+.bottom-sheet-overlay {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.562);
+  transition: all 0.5s ease-in-out;
+  &.close {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+  }
+}

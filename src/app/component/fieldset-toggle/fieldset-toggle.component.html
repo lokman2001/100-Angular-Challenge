@@ -1,0 +1,6 @@
+<fieldset class="fieldset-container">
+    <legend (click)="toggle()">{{title}} <div [class.rotated]="!isOpen" ><fa-icon [icon]="icon" ></fa-icon></div> </legend>
+    <div *ngIf="isOpen" class="fieldset-content" >
+        <ng-content></ng-content>
+    </div>  
+</fieldset>

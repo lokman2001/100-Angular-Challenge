@@ -1,0 +1,16 @@
+<div>
+  <ng-content></ng-content>
+  <div class="bottom-sheet-content" [class.close]="isClose">
+    <button class="close-button" (click)="hide()"> <fa-icon [icon]="closeIcon"></fa-icon></button>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur labore
+      iusto quam facilis delectus odio omnis nesciunt necessitatibus in tempore
+      suscipit tempora obcaecati incidunt corrupti nisi inventore quae, rem
+      optio.
+
+    </div>
+  </div>
+  <div class="bottom-sheet-overlay" [class.close]="isClose" (click)="hide()">
+
+  </div>
+</div>

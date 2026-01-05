@@ -1,0 +1,16 @@
+.fieldset-container {
+    padding: 8px;
+    legend{
+        padding: 0 8px;
+        cursor: pointer;
+        div{
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s ease-in-out;
+            &.rotated{
+                transform: rotate(180deg);
+                 transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+}

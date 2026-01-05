@@ -1,0 +1,27 @@
+.pill-container { 
+    padding: 2px 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 4px;
+}
+.warning {
+    background-color: #ff9800;
+    color: white;
+    border-radius: 16px;
+}
+.success {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 16px;
+}
+.error {
+    background-color: #f44336;
+    color: white;
+    border-radius: 16px;
+}
+.info {
+    background-color: #2196f3;
+    color: white;
+    border-radius: 16px;
+}
