@@ -1,15 +1,21 @@
 <app-banner-cutout title="Components"
   imgURL="https://www.innerspace.org.uk/wp-content/uploads/bb-plugin/cache/A-calm-mind-a-Serene-mind-p7-panorama-38a402f47251310159ac37b007073324-5fd0b0d010f49.png"></app-banner-cutout>
 
-<h2>Component Page</h2>
-<hr />
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Card" subtitle="Component">
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Overlay" subtitle="Component">
   <div body>
-    <div>
-      <a routerLink="404"> Go to Unknown Page</a>
-    </div>
+    <button class="btn" (click)="OverlayToggle()">Overlay</button>
+    <app-overlay [isShow]="overlayToggle" (hideOverlay)="OverlayOutput($event)"></app-overlay>
+
   </div>
 </app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Password" subtitle="Component">
+  <div body>
+
+    <app-passowrd></app-passowrd>
+
+  </div>
+</app-card>
+
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Card" subtitle="Component">
   <p footer>Card Footer</p>
   <p body>Card Body</p>
@@ -119,7 +125,7 @@
 
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Button Toggle" subtitle="Component">
   <div body>
-    <app-snackbar message="this is Snackbar" #snackbar></app-snackbar>
+    <app-snackbar #snackbar></app-snackbar>
     <button class="btn" (click)="showSnackbar()">Show Snackbar</button>
   </div>
 </app-card>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { SnackbarService } from 'src/app/service/snackbar.service';
 
 @Component({
   selector: 'app-directives-page',
@@ -7,6 +8,9 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./directives-page.component.scss'],
 })
 export class DirectivesPageComponent {
+
+  constructor(public snackbarService : SnackbarService){}
+
   public debounceClickEvent = '';
   public faInfo = faInfoCircle;
   public cardIconEnable = true;
@@ -16,5 +20,8 @@ export class DirectivesPageComponent {
   }
   public reset() {
     this.debounceClickEvent = '';
+  }
+  public callSnackbar(value: string){
+    this.snackbarService.callSnackbar(value)
   }
 }

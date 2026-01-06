@@ -8,5 +8,5 @@ import { Accordion } from './interface/accordion';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = '100Days-Angular';
+  title = '100-Angular-Challenge';
 }

@@ -25,3 +25,21 @@
 
 
 </app-card>
+
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="" subtitle="directive">
+
+    <div  body style="display: flex; align-items: center; justify-content: center;">
+        <div appScale style="width: 100px; height: 100px; background: #3946ff8f;"></div>
+    </div>
+
+
+</app-card>
+<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="" subtitle="directive">
+
+    <div  body>
+        <app-snackbar #snackbar></app-snackbar>
+        <button class="btn" appCopy="example text">Copy</button>
+    </div>
+
+
+</app-card>

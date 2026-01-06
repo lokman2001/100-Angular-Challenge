@@ -28,11 +28,20 @@ export class ComponentPageComponent {
   public tabs!: Tab[];
   public currentTab = 0;
   public isloaded = false;
+  public overlayToggle = false
   public tagIcon = faTag;
   public pillType = PillType
+  public OverlayOutput(value : any){
+    
+    this.overlayToggle = value
+  }
+  public OverlayToggle(){
+    this.overlayToggle = !this.overlayToggle  
+    console.log(this.overlayToggle)
+  }
   @ViewChild('snackbar') public snackbar!: SnackbarComponent;
   public showSnackbar() {
-    this.snackbar.show();
+    this.snackbar.show('example');
   }
 
   @ViewChild('bottomSheet') public bottomSheet!: BottonSheetComponent;

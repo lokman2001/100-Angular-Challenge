@@ -38,7 +38,7 @@ import { ButtonToggleComponent } from './component/button-toggle/button-toggle.c
 import { BannerCutoutComponent } from './component/banner-cutout/banner-cutout.component';
 import { SnackbarComponent } from './component/snackbar/snackbar.component';
 import { CountdownTimerComponent } from './component/countdown-timer/countdown-timer.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from './component/popup/popup.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SkeletonLoaderComponent } from './component/skeleton-loader/skeleton-loader.component';
@@ -48,6 +48,12 @@ import { FieldsetToggleComponent } from './component/fieldset-toggle/fieldset-to
 import { PillComponent } from './component/pill/pill.component';
 import { PillFilterComponent } from './component/pill-filter/pill-filter.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
+import { PassowrdComponent } from './component/passowrd/passowrd.component';
+import { OverlayComponent } from './component/overlay/overlay.component';
+import { ScaleDirective } from './directive/scale.directive';
+import { CopyDirective } from './directive/copy.directive';
+import { RichTextPipe } from './pipes/rich-text.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -94,6 +100,12 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     PillComponent,
     PillFilterComponent,
     NotFoundComponent,
+    PassowrdComponent,
+    OverlayComponent,
+    ScaleDirective,
+    CopyDirective,
+    RichTextPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +115,10 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: 'Navigator', useValue: navigator },
+    { provide: 'Document', useValue: document },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

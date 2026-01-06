@@ -1,0 +1,15 @@
+<div class="password-container">
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" [(ngModel)]="password">
+    </div>
+    <div>
+        <progress class="password-stength" [value]="passwordStengthPercent" [max]="100"></progress>
+        <ul class="password-hint">
+            <li *ngIf="!is8CharacterOrGreater">At least 8 characters required</li>
+            <li *ngIf="!hasCaopitalLetter">One or more capital letter required</li>
+            <li *ngIf="!hasNumber">One or more number required</li>
+            <li *ngIf="!hasSpecialCharacter">One or more special character required</li>
+        </ul>
+    </div>
+</div>
