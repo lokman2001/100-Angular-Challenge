@@ -1,0 +1,12 @@
+@import " ../../../../../style/color.scss";
+.notfound-container {
+  display: grid;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  height: 80vh;
+  color: $lightblue;
+  fa-icon {
+    font-size: 120px;
+  }
+}

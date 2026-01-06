@@ -1,4 +1,6 @@
-<span  [ngClass]="['pill-container',type]">
-    <fa-icon [icon]="icon" ></fa-icon>
-    <span class="pill-title">{{title}}</span>
+<span [ngClass]="['pill-container',type]" (click)="toggle()">
+    <fa-icon *ngIf="icon" [icon]="icon"></fa-icon>
+    <span class="pill-title">{{label}}</span>
+
+    <fa-icon *ngIf="canBeSelect && isActive" [icon]="closeIcon"></fa-icon>
 </span>

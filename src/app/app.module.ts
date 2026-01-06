@@ -46,6 +46,8 @@ import { SocialMediaBarComponent } from './component/social-media-bar/social-med
 import { BottonSheetComponent } from './component/botton-sheet/botton-sheet.component';
 import { FieldsetToggleComponent } from './component/fieldset-toggle/fieldset-toggle.component';
 import { PillComponent } from './component/pill/pill.component';
+import { PillFilterComponent } from './component/pill-filter/pill-filter.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +92,8 @@ import { PillComponent } from './component/pill/pill.component';
     BottonSheetComponent,
     FieldsetToggleComponent,
     PillComponent,
+    PillFilterComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
