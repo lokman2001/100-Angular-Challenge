@@ -1,52 +1,110 @@
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Card Number Formater" subtitle="pipe">
-
-    <div body>
-        <p>
-            {{ "0000222244447777" | creditCardFormater }}
-        </p>
-    </div>
-
-
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Card Number Formater"
+  subtitle="pipe"
+>
+  <div body>
+    <p>
+      {{ "0000222244447777" | creditCardFormater }}
+    </p>
+  </div>
 </app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Flatten" subtitle=" pipe">
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Flatten"
+  subtitle=" pipe"
+>
+  <div body>
+    <p>
+      {{ flattenData | flatten }}
+    </p>
 
-    <div body>
-        <p>
-            {{ flattenData | flatten }}
-        </p>
-
-        <app-button color="light-blue" text="modify" (buttonClick)="modify()"></app-button>
-        <app-button color="light-blue" text="reassign" (buttonClick)="reassign()"></app-button>
-    </div>
-
-
+    <app-button
+      color="light-blue"
+      text="modify"
+      (buttonClick)="modify()"
+    ></app-button>
+    <app-button
+      color="light-blue"
+      text="reassign"
+      (buttonClick)="reassign()"
+    ></app-button>
+  </div>
 </app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Truncate" subtitle="pipe">
-
-    <div body>
-        <p>
-            {{
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem repellendus fugiat quam ad nobis, porro
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Truncate"
+  subtitle="pipe"
+>
+  <div body>
+    <p>
+      {{
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem repellendus fugiat quam ad nobis, porro
             nihil
             mollitia vel, minima, excepturi temporibus assumenda amet quia commodi corporis facilis voluptatem explicabo
-            enim!"
-            | truncate
-            }}
-        </p>
-    </div>
-
-
+            enim!" | truncate
+      }}
+    </p>
+  </div>
 </app-card>
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Filter Term" subtitle="pipe">
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Filter Term"
+  subtitle="pipe"
+>
+  <div body>
+    <p>
+      {{ ["hello", "world"] | filterTerm : "" }}
+    </p>
+  </div>
+</app-card>
 
-    <div body>
-        <p>
-            {{
-            ['hello','world'] | filterTerm : ""
-            }}
-        </p>
-
-    </div>
-
-
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Sorting Term"
+  subtitle="pipe"
+>
+  <div body>
+    <h5>sort by asc</h5>
+    
+    <p>
+      {{
+        [
+          "apple",
+          "bridge",
+          "cloud",
+          "desert",
+          "eagle",
+          "forest",
+          "glance",
+          "harbor",
+          "island",
+          "jungle"
+        ] | sort 
+      }}
+    </p>
+    <h5>sort by desc</h5>
+    
+    <p>
+      {{
+        [
+          "apple",
+          "bridge",
+          "cloud",
+          "desert",
+          "eagle",
+          "forest",
+          "glance",
+          "harbor",
+          "island",
+          "jungle"
+        ] | sort :false
+      }}
+    </p>
+  </div>
 </app-card>

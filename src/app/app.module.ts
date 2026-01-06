@@ -46,6 +46,12 @@ import { SocialMediaBarComponent } from './component/social-media-bar/social-med
 import { BottonSheetComponent } from './component/botton-sheet/botton-sheet.component';
 import { FieldsetToggleComponent } from './component/fieldset-toggle/fieldset-toggle.component';
 import { PillComponent } from './component/pill/pill.component';
+import { PassowrdComponent } from './component/passowrd/passowrd.component';
+import { OverlayComponent } from './component/overlay/overlay.component';
+import { ScaleDirective } from './directive/scale.directive';
+import { CopyDirective } from './directive/copy.directive';
+import { RichTextPipe } from './pipes/rich-text.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -90,6 +96,12 @@ import { PillComponent } from './component/pill/pill.component';
     BottonSheetComponent,
     FieldsetToggleComponent,
     PillComponent,
+    PassowrdComponent,
+    OverlayComponent,
+    ScaleDirective,
+    CopyDirective,
+    RichTextPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +111,10 @@ import { PillComponent } from './component/pill/pill.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: 'Navigator' , useValue : navigator },
+    { provide : 'Document', useValue : document }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

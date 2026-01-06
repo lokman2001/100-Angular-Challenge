@@ -1,1 +1,11 @@
-<p>services-page works!</p>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <app-snackbar  message="this is Snackbar" #snackbar></app-snackbar>
+    <button class="btn" (click)="showSnackbar()">Show Snackbar</button>
+  </div>
+</app-card>

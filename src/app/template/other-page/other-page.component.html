@@ -1,9 +1,49 @@
-<app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Button Toggle" subtitle="Component">
-    <div body>
-        
-        <div *ngIf="showBox" [@fadeInOut]="showBox">
-            <p>Content to toggle</p>
-        </div>
-        <button (click)="showBox = !showBox">Toggle</button>
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Table"
+  subtitle="Component"
+>
+  <div body>
+    <app-tab [tabs]="tabs" (changeTab)="changeTab($event)"></app-tab>
+    <p @slideRight *ngIf="currentTab === 0 ">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, sint
+      iusto fugit sequi quia vel beatae? Laborum, magnam alias illum,
+      exercitationem, iure facilis possimus animi asperiores vero accusamus
+      delectus velit.1
+    </p>
+    <p @slideRight *ngIf="currentTab === 1 ">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, sint
+      iusto fugit sequi quia vel beatae? Laborum, magnam alias illum,
+      exercitationem, iure facilis possimus animi asperiores vero accusamus
+      delectus velit.2
+    </p>
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <div body>
+    <div *ngIf="showBox" [@fadeInOut]="showBox">
+      <p>Content to toggle</p>
     </div>
+    <button class="btn" (click)="showBox = !showBox">Toggle</button>
+  </div>
+</app-card>
+
+<app-card
+  [iconEnable]="cardIconEnable"
+  [icon]="faInfo"
+  title="Button Toggle"
+  subtitle="Component"
+>
+  <form body [formGroup]="form" >
+    <input formControlName="name" />
+    <br />
+    <button class="btn" type="submit">submit</button>
+  </form>
 </app-card>

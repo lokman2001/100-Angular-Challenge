@@ -5,13 +5,14 @@ import { DirectivesPageComponent } from './template/directives-page/directives-p
 import { ServicesPageComponent } from './template/services-page/services-page.component';
 import { OtherPageComponent } from './template/other-page/other-page.component';
 import { ComponentPageComponent } from './template/component-page/component-page.component';
+import { FormDirtyGuard } from './other/guard/form-dirty.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'components', pathMatch: 'full' },
   { path: 'components', component: ComponentPageComponent },
   { path: 'pipes', component: PipesPageComponent },
   { path: 'directives', component: DirectivesPageComponent },
   { path: 'services', component: ServicesPageComponent },
-  { path: 'other', component: OtherPageComponent },
+  { path: 'other', component: OtherPageComponent , canDeactivate : [FormDirtyGuard]},
 ];
 
 @NgModule({
