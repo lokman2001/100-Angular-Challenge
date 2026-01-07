@@ -108,6 +108,7 @@ import { CreditCardComponentComponent } from './component/credit-card-component/
     RichTextPipe,
     SortPipe,
     CreditCardComponentComponent,
+    SortByKeyPipe,
   ],
   imports: [
     BrowserModule,
