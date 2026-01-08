@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, UrlSegment } from '@angular/router';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { map, mergeMap, Observable, ObservableInput } from 'rxjs';
 import { LocalStorageService } from 'src/app/service/local-storage.service';
 import { SnackbarService } from 'src/app/service/snackbar.service';
-import { User } from 'src/app/service/user.model';
 import { UserService } from 'src/app/service/user.service';
-import { __values } from 'tslib';
+
 
 @Component({
   selector: 'app-services-page',
@@ -27,6 +25,7 @@ export class ServicesPageComponent implements OnInit {
     public userService: UserService,
     public route: ActivatedRoute,
     public localStorage : LocalStorageService,
+    public Router : Router,
   ) {}
 
   ngOnInit(): void {
@@ -40,9 +39,12 @@ export class ServicesPageComponent implements OnInit {
     this.userService.getUserById(this.id).subscribe({
       next: (Response: any) => {
         this.user = Response;
-        console.log(this.user)
+  
       },
     });
+  }
+  public goto(id:number){
+    this.Router.navigate(['/services' , id])
   }
 
   public showSnackbar(): void {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarService } from 'src/app/service/snackbar.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { SnackbarService } from 'src/app/service/snackbar.service';
   styleUrls: ['./directives-page.component.scss'],
 })
 export class DirectivesPageComponent {
-
+  public copyIcon = faCopy
   constructor(public snackbarService : SnackbarService){}
 
   public debounceClickEvent = '';

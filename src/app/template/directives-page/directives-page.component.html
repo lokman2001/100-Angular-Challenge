@@ -35,11 +35,11 @@
 
 </app-card>
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Copy" subtitle="directive">
-
     <div  body>
         <app-snackbar #snackbar></app-snackbar>
-        <button class="btn" appCopy="example text">Copy</button>
+        <div style="border: 1px solid gray; border-radius: 8px; display: flex; width: 300px; justify-content: space-between; padding: 8px;">
+            <p>this is a simple sentence to copy </p>
+           <fa-icon style="color: rgb(58, 55, 255);" [icon]="copyIcon" appCopy="this is a simple sentence to copy " (click)="snackbar.isShow"></fa-icon>
+        </div>
     </div>
-
-
 </app-card>
