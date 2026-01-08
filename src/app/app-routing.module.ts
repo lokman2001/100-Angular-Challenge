@@ -9,12 +9,12 @@ import { FormDirtyGuard } from './other/guard/form-dirty.guard';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 const routes: Routes = [
   { path: '', redirectTo: 'components', pathMatch: 'full' },
-  { path: 'components', component: ComponentPageComponent },
-  { path: 'pipes', component: PipesPageComponent },
-  { path: 'directives', component: DirectivesPageComponent },
-  { path: 'services', component: ServicesPageComponent },
-  { path: 'services/:id', component: ServicesPageComponent },
-  {
+  { data: {title : "components"}, path: 'components', component: ComponentPageComponent },
+  { data: {title : "pipes"}, path: 'pipes', component: PipesPageComponent },
+  { data: {title : "directives"},path: 'directives', component: DirectivesPageComponent },
+  { data: {title : "services"},path: 'services', component: ServicesPageComponent },
+  {path: 'services/:id', component: ServicesPageComponent },
+  { data: {title : "other"},
     path: 'other',
     component: OtherPageComponent,
     canDeactivate: [FormDirtyGuard],
