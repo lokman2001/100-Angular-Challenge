@@ -1,0 +1,62 @@
+@import "../../../style/color.scss";
+@import "../../../style/mixin.scss";
+.model-container {
+  z-index: 16;
+  background: $white;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 8px;
+  @include box-shadow;
+  .model-header {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $silver;
+    p {
+      font-size: large;
+      padding: 0 8px;
+    }
+    fa-icon {
+      color: $silver;
+      border: 1px solid $silver;
+      padding: 4px 12px;
+      border-radius: 8px;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .model-body {
+    padding: 12px;
+    p {
+      padding: 0 8px;
+    }
+
+    .model-footer {
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+  }
+}
+.model-overlay {
+  z-index: 15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #00000056;
+
+  &.is-hidden {
+    visibility: hidden;
+  }
+}

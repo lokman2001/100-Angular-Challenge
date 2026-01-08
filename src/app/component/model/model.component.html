@@ -1,0 +1,12 @@
+<div class="model-container" [class.is-hidden]="!isShow">
+    <div class="model-header">
+        <p>{{ title }}</p>
+        <fa-icon [icon]="closeIcon" (click)="close()"></fa-icon>
+    </div>
+    <div class="model-body">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="model-overlay" [class.is-hidden]="!isShow" (click)="close()">
+
+</div>

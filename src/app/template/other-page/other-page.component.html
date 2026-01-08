@@ -13,16 +13,20 @@
 
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Slide Right" subtitle="animation">
   <div body>
-    <app-tab [tabs]="tabs" (changeTab)="changeTab($event)" >
+    <app-tab [tabs]="tabs" (changeTab)="changeTab($event)">
     </app-tab>
-    <p @slideRight *ngIf="currentTab === 0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque esse et accusantium vero cupiditate beatae perferendis vitae, ullam dignissimos expedita debitis quia iure consequuntur est perspiciatis reiciendis quos accusamus cumque! 1</p>
-    <p @slideRight *ngIf="currentTab === 1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, officia. Natus iste minima aspernatur autem, totam et quisquam, a laborum incidunt voluptatibus, quidem eligendi officiis commodi odit voluptas tenetur quis? 2</p>
+    <p @slideRight *ngIf="currentTab === 0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque esse et
+      accusantium vero cupiditate beatae perferendis vitae, ullam dignissimos expedita debitis quia iure consequuntur
+      est perspiciatis reiciendis quos accusamus cumque! 1</p>
+    <p @slideRight *ngIf="currentTab === 1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, officia.
+      Natus iste minima aspernatur autem, totam et quisquam, a laborum incidunt voluptatibus, quidem eligendi officiis
+      commodi odit voluptas tenetur quis? 2</p>
   </div>
 </app-card>
 
 <app-card [iconEnable]="cardIconEnable" [icon]="faInfo" title="Dirty Form" subtitle="Guard">
   <form body [formGroup]="form">
-    <input formControlName="name" />
+    <input formControlName="name" class="input" />
     <br />
     <button class="btn" type="submit">submit</button>
   </form>

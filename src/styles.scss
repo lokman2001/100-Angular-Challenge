@@ -35,10 +35,23 @@ h6 {
 }
 
 .btn {
+  color: white;
   display: inline-block;
-  bottom: $lightblue;
+  background: $lightblue;
+  border: 0;
   padding: 8px 12px;
   margin: 0px 4px;
+  border-radius: 8px;
+}
+.input {
+  padding: 4px 12px;
+  margin: 8px;
+  border-radius: 8px;
+  border: 1px solid gray;
+
+  &:focus {
+    outline: 0;
+  }
 }
 .ribbon {
   z-index: 10;

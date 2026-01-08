@@ -56,7 +56,10 @@ import { RichTextPipe } from './pipes/rich-text.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { CreditCardComponentComponent } from './component/credit-card-component/credit-card-component.component';
 import { SortByKeyPipe } from './pipes/sort-by-key.pipe';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ModelComponent } from './component/model/model.component';
+import { AutoFocusDirective } from './directive/auto-focus.directive';
+import { LoaderCircularComponent } from './component/loader-circular/loader-circular.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,6 +113,9 @@ import { HttpClientModule } from '@angular/common/http'
     SortPipe,
     CreditCardComponentComponent,
     SortByKeyPipe,
+    ModelComponent,
+    AutoFocusDirective,
+    LoaderCircularComponent,
   ],
   imports: [
     BrowserModule,
